@@ -40,17 +40,19 @@ function showProjectDetails(projectId) {
   </tr>`;
       console.log("Rendering materials for project:", project);
     });
+    projectDetails(projectId);
   };
   renderMaterial(project);
-  function projectDetails(projectId) {
-    const projectDetail = window.projectData[projectId];
-    if (project) {
-      document.getElementById("recent-task").innerHTML = `
+}
+function projectDetails(projectId) {
+  const projectDetail = window.projectData[projectId];
+  if (projectDetail) {
+    document.getElementById("recent-task").innerHTML = `
        <div>
-      <h1>${project.name} - Details</h1>
+      <h1>${projectDetail.name} - Details</h1>
       <h2>Recent Tasks</h2>
       <ul>
-        ${project.recentTasks
+        ${projectDetail.recentTasks
           .map(
             (task) => `
           <li><strong>${task.taskName}</strong> (Assigned to: ${task.assignedTo}) - ${task.status}</li>
@@ -58,6 +60,5 @@ function showProjectDetails(projectId) {
           )
           .join("")}
       </ul></div>`;
-    }
   }
 }
