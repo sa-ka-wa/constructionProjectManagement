@@ -1,18 +1,91 @@
 {
-  "projects": [
-    {
+  "activeProject": {
+    "skylineTowers": {
       "id": 1,
-      "name": "Sunset Apartments",
-      "location": "Nairobi, Kenya",
-      "start_date": "2023-01-15",
-      "end_date": "2024-03-10",
-      "budget": 50000000,
-      "materials": [
-        { "name": "Cement", "quantity": "500 bags" },
-        { "name": "Steel", "quantity": "200 tons" }
+      "name": "Skyline Towers",
+      "status": "In Progress",
+      "completionPercentage": 65,
+      "recentTasks": [
+        {
+          "taskName": "Foundation Work",
+          "assignedTo": "John Smith",
+          "status": "Completed"
+        },
+        {
+          "taskName": "Steel Framework Installation",
+          "assignedTo": "Mike Johnson",
+          "status": "In Progress"
+        }
       ],
-      "workers": [{ "id": 101, "name": "John Mwangi", "role": "Foreman" }],
-      "status": "Completed"
+      "materialsInventory": {
+        "concrete": {
+          "quantity": 500,
+          "unit": "cubic yards",
+          "status": "In Stock"
+        },
+        "steelBeams": {
+          "quantity": 75,
+          "unit": "tons",
+          "status": "In Stock"
+        },
+        "lumber": {
+          "quantity": 15,
+          "unit": "pallets",
+          "status": "Low Stock"
+        },
+        "bricks": {
+          "quantity": 12000,
+          "unit": "pieces",
+          "status": "In Stock"
+        }
+      }
+    },
+    "harborViewComplex": {
+      "id": 2,
+      "name": "Harbor View Complex",
+      "status": "Planning",
+      "completionPercentage": 25,
+      "recentTasks": [
+        {
+          "taskName": "Site Preparation",
+          "assignedTo": "David Brown",
+          "status": "Completed"
+        },
+        {
+          "taskName": "Surveying & Layout",
+          "assignedTo": "Emma Davis",
+          "status": "In Progress"
+        }
+      ],
+      "materialsInventory": {
+        "concrete": {
+          "quantity": 300,
+          "unit": "cubic yards",
+          "status": "In Stock"
+        },
+        "steelBeams": {
+          "quantity": 50,
+          "unit": "tons",
+          "status": "In Stock"
+        },
+        "lumber": {
+          "quantity": 10,
+          "unit": "pallets",
+          "status": "Low Stock"
+        },
+        "bricks": {
+          "quantity": 8000,
+          "unit": "pieces",
+          "status": "In Stock"
+        }
+      }
     }
-  ]
+  },
+  "dashboardSummary": {
+    "totalProjects": 2,
+    "activeProjects": 1,
+    "openTasks": 2,
+    "lowStockMaterials": 2,
+    "workersToday": 25
+  }
 }

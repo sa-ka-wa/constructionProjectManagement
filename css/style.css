@@ -1,0 +1,28 @@
+html {
+  font-family: poppins;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
+  background-color: #bfc0bd;
+  gap: 50px;
+}
+img {
+  background-size: cover;
+  background-position: center;
+  z-index: -10;
+  width: auto;
+  height: 100%;
+  margin-top: -30vh;
+  margin-right: -300vh;
+}
