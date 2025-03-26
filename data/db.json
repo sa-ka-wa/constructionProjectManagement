@@ -1,0 +1,18 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Sunset Apartments",
+      "location": "Nairobi, Kenya",
+      "start_date": "2023-01-15",
+      "end_date": "2024-03-10",
+      "budget": 50000000,
+      "materials": [
+        { "name": "Cement", "quantity": "500 bags" },
+        { "name": "Steel", "quantity": "200 tons" }
+      ],
+      "workers": [{ "id": 101, "name": "John Mwangi", "role": "Foreman" }],
+      "status": "Completed"
+    }
+  ]
+}
