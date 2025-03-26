@@ -16,6 +16,7 @@
         <div id="skyline-projects"></div>
         <div id="harbor-projects"></div>
       </div>
+      <button id="new-data">Add New Data</button>
       <!-- ============================= -->
       <!--          inventory content    -->
       <!-- ============================= -->
@@ -32,6 +33,14 @@
           </thead>
           <tbody id="material-list"></tbody>
         </table>
+        <button id="show-material-form">Add Material</button>
+        <div id="material-inputs" style="display: none">
+          <input type="text" id="materialName" placeholder="Material Name" />
+          <input type="number" id="materialQuantity" placeholder="Quantity" />
+          <input type="text" id="materialUnit" placeholder="Unit" />
+          <input type="text" id="materialStatus" placeholder="Status" />
+          <button id="submit-material">Submit Material</button>
+        </div>
       </div>
     </section>
     <!-- ============================= -->
@@ -47,8 +56,27 @@
       <!-- ============================= -->
       <!--         recent task content   -->
       <!-- ============================= -->
-      <div id="recent-task"></div>
-      <div id="work-force"></div>
+      <div class="recent">
+        <div id="recent-task">
+          <div id="task-inputs" style="display: none">
+            <input type="text" id="taskName" placeholder="Task Name" />
+            <input type="text" id="assignedTo" placeholder="Assigned To" />
+            <input type="text" id="taskStatus" placeholder="Task Status" />
+          </div>
+        </div>
+        <div id="work-force">
+          <div id="workforce-inputs" style="display: none">
+            <input type="text" id="workRole" placeholder="Work Role" />
+            <input type="number" id="workerCount" placeholder="Count" />
+            <input
+              type="number"
+              id="dailyRate"
+              placeholder="Daily Rate (Ksh)"
+            />
+          </div>
+        </div>
+      </div>
+      <div><button onclick="addNewEntry()">Submit</button></div>
     </section>
     <script src="./js/script.js"></script>
   </body>

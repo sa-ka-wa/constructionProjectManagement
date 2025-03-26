@@ -77,9 +77,9 @@
         },
         "steelBeams": {
           "materialName": "steelBeams",
-          "quantity": 50,
+          "quantity": 10,
           "unit": "tons",
-          "status": "In Stock"
+          "status": "Low Stock"
         },
         "lumber": {
           "materialName": "lumber",

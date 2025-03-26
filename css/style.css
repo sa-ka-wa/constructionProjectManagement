@@ -17,6 +17,12 @@ body {
   background-color: #bfc0bd;
   gap: 0;
 }
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
 img {
   background-size: cover;
   background-position: center;
@@ -25,4 +31,41 @@ img {
   height: 100%;
   margin-top: -30vh;
   margin-right: -50 vh;
+}
+button {
+  margin-top: 10px;
+  width: 250px;
+  height: 25px;
+  font-size: large;
+  border: none;
+  border-radius: 100px;
+  color: #e1d7d5ff;
+  background-color: #070504ff;
+  cursor: pointer;
+}
+input {
+  width: 250px;
+  height: 25px;
+  border-color: #070504ff;
+  background-color: #f1f1f1;
+  border-radius: 100px;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+.recent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+h1 {
+  color: #1e1c22;
+}
+h2 {
+  color: #ca8954;
+}
+.low-stock {
+  background-color: #faf1e280; /* Light red background */
+  color: #ca7554; /* Red text */
+  font-weight: bold;
 }

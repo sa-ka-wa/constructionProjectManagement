@@ -1,3 +1,12 @@
+document.getElementById("new-data").addEventListener("click", function () {
+  document.getElementById("task-inputs").style.display = "block";
+  document.getElementById("workforce-inputs").style.display = "block";
+});
+document
+  .getElementById("show-material-form")
+  .addEventListener("click", function () {
+    document.getElementById("material-inputs").style.display = "block";
+  });
 async function fetchActiveProjects() {
   const project = await fetch("http://localhost:3000/activeProject");
   const activeProject = await project.json();
@@ -26,18 +35,25 @@ async function fetchActiveProjects() {
 }
 fetchActiveProjects();
 
+let currentProjectId = null;
+
 function showProjectDetails(projectId) {
+  currentProjectId = projectId;
   const project = window.projectData[projectId];
   const renderMaterial = (project) => {
     const materialList = document.getElementById("material-list");
+
     materialList.innerHTML = "";
+
     Object.values(project.materialsInventory).forEach((material) => {
-      materialList.innerHTML += `<tr>
+      const isLowStock = material.quantity < 20;
+      materialList.innerHTML += `<tr class="${isLowStock ? "low-stock" : ""}">
           <td>${material.materialName}</td>
           <td>${material.quantity}</td>
           <td>${material.unit}</td>
           <td>${material.status}</td>
   </tr>`;
+
       console.log("Rendering materials for project:", project);
     });
     projectDetails(projectId);
@@ -45,6 +61,35 @@ function showProjectDetails(projectId) {
   };
   renderMaterial(project);
 }
+
+document.getElementById("submit-material").onclick = function () {
+  const materialName = document.getElementById("materialName").value.trim();
+  const materialQuantity = parseInt(
+    document.getElementById("materialQuantity").value.trim(),
+    10
+  );
+  const materialUnit = document.getElementById("materialUnit").value.trim();
+  const materialStatus = document.getElementById("materialStatus").value.trim();
+
+  const newMaterial = {
+    materialName,
+    quantity: materialQuantity,
+    unit: materialUnit,
+    status: materialStatus,
+  };
+  if (!window.projectData[currentProjectId].materialsInventory) {
+    window.projectData[currentProjectId].materialsInventory = {};
+  }
+  window.projectData[currentProjectId].materialsInventory[materialName] =
+    newMaterial;
+  showProjectDetails(currentProjectId);
+  document.getElementById("materialName").value = "";
+  document.getElementById("materialQuantity").value = "";
+  document.getElementById("materialUnit").value = "";
+  document.getElementById("materialStatus").value = "";
+  document.getElementById("material-inputs").style.display = "none";
+};
+
 function projectDetails(projectId) {
   const projectDetail = window.projectData[projectId];
   if (projectDetail) {
