@@ -19,21 +19,25 @@
       ],
       "materialsInventory": {
         "concrete": {
+          "materialName": "concrete",
           "quantity": 500,
           "unit": "cubic yards",
           "status": "In Stock"
         },
         "steelBeams": {
+          "materialName": "steelBeams",
           "quantity": 75,
           "unit": "tons",
           "status": "In Stock"
         },
         "lumber": {
+          "materialName": "lumber",
           "quantity": 15,
           "unit": "pallets",
           "status": "Low Stock"
         },
         "bricks": {
+          "materialName": "bricks",
           "quantity": 12000,
           "unit": "pieces",
           "status": "In Stock"
@@ -59,21 +63,25 @@
       ],
       "materialsInventory": {
         "concrete": {
+          "materialName": "concrete",
           "quantity": 300,
           "unit": "cubic yards",
           "status": "In Stock"
         },
         "steelBeams": {
+          "materialName": "steelBeams",
           "quantity": 50,
           "unit": "tons",
           "status": "In Stock"
         },
         "lumber": {
+          "materialName": "lumber",
           "quantity": 10,
           "unit": "pallets",
           "status": "Low Stock"
         },
         "bricks": {
+          "materialName": "bricks",
           "quantity": 8000,
           "unit": "pieces",
           "status": "In Stock"
