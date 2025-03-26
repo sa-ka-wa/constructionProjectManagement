@@ -1,0 +1,24 @@
+"weeklyLaborRegister": {
+  "Monday": {
+    "masons": { "count": 5, "rate": 2000 },
+    "carpenters": { "count": 4, "rate": 1800 },
+    "electricians": { "count": 3, "rate": 2200 },
+    "plumbers": { "count": 2, "rate": 2100 },
+    "laborers": { "count": 8, "rate": 1500 }
+  },
+  "totals": {
+    "masons": 27,
+    "carpenters": 18,
+    "electricians": 19,
+    "plumbers": 12,
+    "laborers": 40
+  },
+  "grandTotal": 116,
+  "totalCost": 652000
+},
+"materialPrices": {
+  "concrete": { "pricePerUnit": 5000, "unit": "cubic yards", "quantity": 500 },
+  "steelBeams": { "pricePerUnit": 10000, "unit": "tons", "quantity": 75 },
+  "lumber": { "pricePerUnit": 7000, "unit": "pallets", "quantity": 15 },
+  "bricks": { "pricePerUnit": 8, "unit": "pieces", "quantity": 12000 }
+}

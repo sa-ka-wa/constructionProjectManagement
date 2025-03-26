@@ -41,6 +41,7 @@ function showProjectDetails(projectId) {
       console.log("Rendering materials for project:", project);
     });
     projectDetails(projectId);
+    workforce(projectId);
   };
   renderMaterial(project);
 }
@@ -59,6 +60,31 @@ function projectDetails(projectId) {
         `
           )
           .join("")}
-      </ul></div>`;
+      </ul></div>
+ `;
+  }
+}
+function workforce(projectId) {
+  const projectWorkforce = window.projectData[projectId];
+  if (projectWorkforce) {
+    const workforceList = document.getElementById("work-force");
+    workforceList.innerHTML = `<h2>Workforce Details</h2>
+      <table>
+        <tr>
+          <th>Role</th>
+          <th>Count</th>
+          <th>Daily Rate (Ksh)</th>
+        </tr>
+        ${Object.entries(projectWorkforce.workforce)
+          .map(
+            ([role, details]) => `
+          <tr>
+            <td>${role.charAt(0).toUpperCase() + role.slice(1)}</td>
+            <td>${details.count}</td>
+            <td>${details.rate}</td>
+          </tr>`
+          )
+          .join("")}
+      </table>`;
   }
 }

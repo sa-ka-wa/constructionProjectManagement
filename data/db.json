@@ -42,6 +42,13 @@
           "unit": "pieces",
           "status": "In Stock"
         }
+      },
+      "workforce": {
+        "masons": { "count": 5, "rate": 2000 },
+        "carpenters": { "count": 4, "rate": 1800 },
+        "electricians": { "count": 3, "rate": 2200 },
+        "plumbers": { "count": 2, "rate": 2100 },
+        "laborers": { "count": 8, "rate": 1500 }
       }
     },
     "harborViewComplex": {
@@ -86,6 +93,13 @@
           "unit": "pieces",
           "status": "In Stock"
         }
+      },
+      "workforce": {
+        "masons": { "count": 4, "rate": 2000 },
+        "carpenters": { "count": 3, "rate": 1800 },
+        "electricians": { "count": 2, "rate": 2200 },
+        "plumbers": { "count": 2, "rate": 2100 },
+        "laborers": { "count": 5, "rate": 1500 }
       }
     }
   },
