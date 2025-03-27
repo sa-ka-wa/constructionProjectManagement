@@ -36,6 +36,10 @@ Jenga Build is an intuitive, front-end construction project management system de
 
 ---
 
+## 📊 Project Presentation
+
+[👉 View Google Slides](https://docs.google.com/presentation/d/1UoelLLrfixGUU92XMtaUetYNnfxDmH55OVzUwvbiPkc/view)
+
 ## **Installation & Setup**
 
 ### **1. Clone the Repository**
