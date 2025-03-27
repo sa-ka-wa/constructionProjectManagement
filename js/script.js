@@ -1,4 +1,5 @@
 document.getElementById("new-data").addEventListener("click", function () {
+  document.getElementById("project-form").style.display = "block";
   document.getElementById("task-inputs").style.display = "block";
   document.getElementById("workforce-inputs").style.display = "block";
 });
@@ -32,6 +33,48 @@ async function fetchActiveProjects() {
     [activeProject.skylineTowers.id]: activeProject.skylineTowers,
     [activeProject.harborViewComplex.id]: activeProject.harborViewComplex,
   };
+  const projectName = document.getElementById("projectName").value.trim();
+  const projectStatus = document.getElementById("projectStatus").value.trim();
+  const completionPercentage = parseInt(
+    document.getElementById("completionPercentage").value.trim(),
+    10
+  );
+  const newProject = {
+    name: projectName,
+    status: projectStatus,
+    completionPercentage,
+    materialsInventory: {},
+    recentTasks: [],
+    workforce: {},
+  };
+
+  try {
+    const response = await fetch("http://localhost:3000/activeProject", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newProject),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to save project data!");
+    }
+
+    const savedProject = await response.json();
+    console.log("Project saved:", savedProject);
+
+    // Clear fields and hide form
+    document.getElementById("projectName").value = "";
+    document.getElementById("projectStatus").value = "";
+    document.getElementById("completionPercentage").value = "";
+    document.getElementById("project-form").style.display = "none";
+
+    // Refresh project list
+    fetchActiveProjects();
+  } catch (error) {
+    console.error("Error adding project:", error);
+  }
 }
 fetchActiveProjects();
 
