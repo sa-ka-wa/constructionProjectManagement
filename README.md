@@ -113,18 +113,6 @@ constructionProjectManagement/
 
 ---
 
-## **Contributing**
-
-Want to improve this project? Follow these steps:
-
-1. **Fork the repository**
-2. **Create a new branch** (`feature-branch`)
-3. **Commit changes**
-4. **Push to GitHub**
-5. **Create a Pull Request**
-
----
-
 ## **License**
 
 This project is open-source and available under the **MIT License**.

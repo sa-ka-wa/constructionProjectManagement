@@ -72,3 +72,8 @@ h2 {
 #project-form {
   display: none;
 }
+.button {
+  width: 60px;
+  padding: 4px;
+  font-size: 12px;
+}

@@ -95,7 +95,28 @@ function showProjectDetails(projectId) {
           <td>${material.quantity}</td>
           <td>${material.unit}</td>
           <td>${material.status}</td>
+                  <td>
+          <button class="button" onclick="editMaterial('${
+            material.materialName
+          }')">Edit</button>
+          <button class="button" onclick="deleteMaterial('${
+            material.materialName
+          }')">Delete</button>
+        </td>
   </tr>`;
+      document
+        .getElementById("material-list")
+        .addEventListener("click", function (event) {
+          if (event.target.classList.contains("edit-btn")) {
+            const materialName = event.target.getAttribute("data-material");
+            editMaterial(materialName);
+          }
+
+          if (event.target.classList.contains("delete-btn")) {
+            const materialName = event.target.getAttribute("data-material");
+            deleteMaterial(materialName);
+          }
+        });
 
       console.log("Rendering materials for project:", project);
     });
@@ -132,6 +153,17 @@ document.getElementById("submit-material").onclick = function () {
   document.getElementById("materialStatus").value = "";
   document.getElementById("material-inputs").style.display = "none";
 };
+let editingMaterial = null;
+function editMaterial(materialName) {
+  const project = window.projectData[currentProjectId];
+  const material = project.materialsInventory[materialName];
+  document.getElementById("materialName").value = material.materialName;
+  document.getElementById("materialQuantity").value = material.quantity;
+  document.getElementById("materialUnit").value = material.unit;
+  document.getElementById("materialStatus").value = material.status;
+  document.getElementById("material-inputs").style.display = "block";
+  document.getElementById("submit-material").innerText = "Update Material";
+}
 
 function projectDetails(projectId) {
   const projectDetail = window.projectData[projectId];
