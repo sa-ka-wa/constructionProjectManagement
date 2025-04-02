@@ -164,6 +164,11 @@ function editMaterial(materialName) {
   document.getElementById("material-inputs").style.display = "block";
   document.getElementById("submit-material").innerText = "Update Material";
 }
+function deleteMaterial(materialName) {
+  const project = window.projectData[currentProjectId];
+  delete project.materialsInventory[materialName];
+  showProjectDetails(currentProjectId);
+}
 
 function projectDetails(projectId) {
   const projectDetail = window.projectData[projectId];
