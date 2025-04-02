@@ -9,7 +9,9 @@ document
     document.getElementById("material-inputs").style.display = "block";
   });
 async function fetchActiveProjects() {
-  const project = await fetch("http://localhost:3000/activeProject");
+  const project = await fetch(
+    "https://const-api-2.onrender.com/api/projectData"
+  );
   const activeProject = await project.json();
   console.log("Active Projects Data:", activeProject);
 
@@ -49,13 +51,16 @@ async function fetchActiveProjects() {
   };
 
   try {
-    const response = await fetch("http://localhost:3000/activeProject", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newProject),
-    });
+    const response = await fetch(
+      "https://const-api-2.onrender.com/api/projectData",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newProject),
+      }
+    );
 
     if (!response.ok) {
       throw new Error("Failed to save project data!");
